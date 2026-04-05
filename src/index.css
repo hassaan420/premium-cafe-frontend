@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-espresso: #6F4E37;
+  --color-cocoa: #4A3428;
+  --color-cream: #FAF3E7;
+  --color-caramel: #C68B59;
+  --color-rose: #D9A6A0;
+  --color-ink: #333333;
+  --color-mist: #FFF8F0;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Jost', system-ui, sans-serif;
+}
+
+:root {
+  --bg: #FAF3E7;
+  --card: #FFF8F0;
+  --primary: #6F4E37;
+  --accent: #C68B59;
+  --text: #4A3428;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+/* Grain overlay */
+.grain::after {
+  content: '';
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.35;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 3px; }
+
+/* Section divider */
+.divider {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--primary), transparent);
+  margin: 0 auto;
+}
+
+/* Gold shimmer text */
+.text-gold {
+  color: var(--primary);
+}
+
+.text-cream {
+  color: var(--text);
+}
+
+.bg-ink {
+  background-color: var(--bg);
+}
+
+.bg-espresso {
+  background-color: var(--bg);
+}
+
+.bg-cocoa {
+  background-color: var(--card);
+}
+
+/* Card hover glow */
+.card-glow {
+  transition: box-shadow 0.4s ease, transform 0.4s ease;
+}
+.card-glow:hover {
+  box-shadow: 0 20px 60px rgba(200, 138, 61, 0.15);
+  transform: translateY(-4px);
+}
+
+/* Menu card */
+.menu-card {
+  background: linear-gradient(135deg, rgba(255,255,255,1), rgba(255,255,255,1));
+  border: 1px solid rgba(200,138,61,0.15);
+  backdrop-filter: blur(10px);
+}
+
+/* Nav blur */
+.nav-blur {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* Intro overlay */
+.intro-bg {
+  background: radial-gradient(ellipse at center, var(--bg) 0%, var(--bg) 70%);
+}
+
+/* Hero gradient */
+.hero-gradient {
+  background: radial-gradient(ellipse at 60% 50%, rgba(90,58,46,0.4) 0%, transparent 70%);
+}
+
+/* Story texture */
+.story-bg {
+  background: linear-gradient(135deg, var(--bg) 0%, var(--bg) 50%, var(--bg) 100%);
+}
+
+/* Pairing card */
+.pairing-card {
+  background: linear-gradient(135deg, rgba(255,255,255,1), rgba(255,255,255,1));
+  border: 1px solid rgba(200,138,61,0.2);
+}
+
+/* Pill tag */
+.tag {
+  background: rgba(200,138,61,0.15);
+  border: 1px solid rgba(200,138,61,0.3);
+  color: var(--primary);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 2px 10px;
+  border-radius: 20px;
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-12px) rotate(1deg); }
+  66% { transform: translateY(-6px) rotate(-0.5deg); }
+}
+.float-anim {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+.scroll-x {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scroll-x::-webkit-scrollbar { display: none; }
+
+.card {
+  background: var(--card);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.btn {
+  background: var(--primary);
+  color: white;
+  border-radius: 999px;
+  padding: 10px 18px;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  transition: 0.2s ease;
+}
+
+.category-active {
+  background: var(--primary);
+  color: white;
+}
+
