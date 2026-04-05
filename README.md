@@ -79,10 +79,11 @@ src/
   pages/
   App.tsx
   main.tsx
-
 public/
   images/
-🚀 Getting Started
+
+
+##🚀 Getting Started
 1. Clone the repo
 git clone https://github.com/hassaan420/premium-cafe-frontend.git
 cd premium-cafe-frontend
@@ -94,7 +95,7 @@ npm run dev
 npm run build
 5. Preview build
 npm run preview
-📬 Contact Form Setup
+##📬 Contact Form Setup
 
 This project uses Web3Forms for handling form submissions.
 
@@ -137,6 +138,7 @@ GitHub: https://github.com/hassaan420
 
 ## 📸 Screenshots
 ## 📸 Screenshots
+## 📸 Screenshots
 
 ### Home Page
 ![Home](./screenshots/home.png)
@@ -144,8 +146,8 @@ GitHub: https://github.com/hassaan420
 ### Menu Page
 ![Menu](./screenshots/menu.png)
 
-### Contact Page
-![about](./screenshots/about.png)
+### About Page
+![About](./screenshots/about.png)
 
 
 
